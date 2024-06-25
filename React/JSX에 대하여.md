@@ -1,0 +1,35 @@
+### 자바스크립트의 확장 문법
+XML/HTML과 유사한 문법을 사용하여 작성되지만, 브라우저에서 실행되기 전에 자바스크립트 코드로 변환되는 과정을 거친다.
+
+```javascript
+//JSX 사용한 문법
+const element = (
+  <h1> className="greeting">
+    Hello, world!
+  </h1>
+)
+```
+```javascript
+//JS로 변환된 모습
+const element = React.createElement(
+  'h1', //type
+  { className: 'greeting'}, //props
+  'Hello, World!' //children
+)
+```
+***
+### 장점
+* 간결한 코드 작성
+* 가독성 향상
+* Injection Attack으로부터 안전
+```javascript
+//악성코드 삽입이 되어도
+const element = <h1>{title}</h1>
+//괄호 안 title 렌더링 전에 임베딩된 값을 문자열로 변환하기 때문에 안전하다.
+```
+***
+### 사용법
+소플의 처음 만난 리액트 104pg
+* 태그 속성 지정
+  * 중괄호{} 안에 자바스크립트 코드
+  * 쌍따옴표""안에 문자열
