@@ -15,7 +15,7 @@ const element = (
 const element = React.createElement(
   'h1', //type
   { className: 'greeting'}, //props
-  'Hello, World!' //children
+  'Hello, World!' //...children
 )
 ```
 ***
