@@ -39,3 +39,7 @@
 -   다양한 그림자 스타일 추가 및 디자인 미리보기 저장 기능
 -   box-shadow 외에도 border-radius, filter 등 다른 CSS 속성 복사 기능 확장
 -   키보드 접근성: `tabindex="0"` 추가 + `keydown`으로 Enter/Space 대응
+
+### ✅ 결과물
+![화면 기록 2025-06-06 오후 5 43 11](https://github.com/user-attachments/assets/6198648b-fd05-4e8e-9e19-a840b18c79e5)
+
