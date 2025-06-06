@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>click & copy CSS</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            header,
+            footer {
+                width: 100vw;
+                background-color: lightblue;
+            }
+            main {
+                background-color: white;
+            }
+            ul {
+                list-style: none;
+            }
+            li {
+                display: inline-block;
+            }
+            [class*="box"] {
+                width: 20vw;
+                height: 20vw;
+                border-radius: 6px;
+                margin: 2vw;
+                p {
+                    opacity: 0;
+                }
+            }
+            [class*="box"] p {
+                width: 100%; /* 박스를 꽉 채움 */
+                height: 100%;
+                display: flex; /* 텍스트 자체도 중앙 정렬하고 싶을 때 */
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                transition: opacity 0.2s;
+                pointer-events: none; /* 클릭 이벤트 방해하지 않도록! ✅ */
+            }
+            [class*="box"]:hover p,
+            [class*="box"]:hover p {
+                cursor: pointer;
+                opacity: 1;
+                text-decoration: underline;
+            }
+
+            ul :first-child > div {
+                box-shadow: 1px 2px 3px 4px black;
+            }
+
+            ul :nth-child(2) > div {
+                box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px,
+                    rgba(0, 0, 0, 0.24) 0px 1px 2px;
+            }
+            ul :nth-child(3) > div {
+                box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+                    rgba(0, 0, 0, 0.12) 0px -12px 30px,
+                    rgba(0, 0, 0, 0.12) 0px 4px 6px,
+                    rgba(0, 0, 0, 0.17) 0px 12px 13px,
+                    rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            }
+            ul :nth-child(4) > div {
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+                    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1 class="logo">click & copy CSS</h1>
+        </header>
+        <main>
+            <ul>
+                <li>
+                    <div
+                        class="box1"
+                        role="button"
+                        aria-label="box1 box-shadow css 복사하기"
+                    >
+                        <p>#1</p>
+                    </div>
+                </li>
+                <li>
+                    <div
+                        class="box2"
+                        role="button"
+                        aria-label="box2 box-shadow css 복사하기"
+                    >
+                        <p>#2</p>
+                    </div>
+                </li>
+                <li>
+                    <div
+                        class="box3"
+                        role="button"
+                        aria-label="box3 box-shadow css 복사하기"
+                    >
+                        <p>#3</p>
+                    </div>
+                </li>
+                <li>
+                    <div
+                        class="box4"
+                        role="button"
+                        aria-label="box4 box-shadow css 복사하기"
+                    >
+                        <p>#4</p>
+                    </div>
+                </li>
+            </ul>
+        </main>
+        <footer><cite>click & copy CSS &copy;jiunlee19</cite></footer>
+        <script>
+            document.addEventListener("click", handleCopyCSS);
+            document.addEventListener("touchstart", handleCopyCSS);
+
+            function handleCopyCSS(e) {
+                const boxDiv = e.target.closest("div[class^='box']");
+                if (boxDiv) {
+                    const computedStyle = window.getComputedStyle(boxDiv);
+                    const boxShadow =
+                        computedStyle.getPropertyValue("box-shadow");
+
+                    navigator.clipboard
+                        .writeText(`box-shadow: ${boxShadow};`)
+                        .then(() => {
+                            alert("복사되었습니다!");
+                        })
+                        .catch((err) => {
+                            console.error("복사 실패! 다시 클릭해주세요", err);
+                        });
+                }
+            }
+        </script>
+    </body>
+</html>
