@@ -28,14 +28,12 @@
 
 ---
 
-### ✨ 추가하면 좋은 내용
-
-#### 📌 기술 스택
+### 📌 기술 스택
 
 -   HTML, CSS, JavaScript (Vanilla)
 -   브라우저 API: `navigator.clipboard`, `getComputedStyle`
 
-#### 📌 향후 개선 아이디어
+### 📌 향후 개선 아이디어
 
 -   복사 성공 시 토스트 알림 도입 (예: `setTimeout`으로 alert 대체)
 -   다양한 그림자 스타일 추가 및 디자인 미리보기 저장 기능
