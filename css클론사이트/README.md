@@ -1,5 +1,7 @@
 ## ✅ click & copy CSS 개발 회고
 
+참고:https://getcssscan.com/?ref=beautifulboxshadow_header_logo
+
 ### 1. 어떤 문제를 어떤 방식으로 해결했는가?
 
 #### 목표
@@ -41,5 +43,5 @@
 -   키보드 접근성: `tabindex="0"` 추가 + `keydown`으로 Enter/Space 대응
 
 ### ✅ 결과물
-![화면 기록 2025-06-06 오후 5 43 11](https://github.com/user-attachments/assets/6198648b-fd05-4e8e-9e19-a840b18c79e5)
 
+![화면 기록 2025-06-06 오후 5 43 11](https://github.com/user-attachments/assets/6198648b-fd05-4e8e-9e19-a840b18c79e5)
