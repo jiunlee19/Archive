@@ -1,0 +1,19 @@
+/* 햄버거 버튼 */
+.hamburger {
+    width: 0.8rem;
+    height: 0.8rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hamburger span {
+    display: block;
+    height: 2px;
+    background: black;
+    border-radius: 30%;
+}
+.hamburger :nth-child(2) {
+    width: 0.5rem;
+}
