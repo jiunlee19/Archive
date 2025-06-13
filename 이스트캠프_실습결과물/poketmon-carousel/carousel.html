@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Poketmon Carousel</title>
+        <link rel="stylesheet" href="./reset.css" />
+        <link rel="stylesheet" href="./carousel.css" />
+        <style>
+            .btn-group {
+                width: 100vw;
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+            }
+            button {
+                all: unset;
+                padding: 10px 27px;
+                background-color: lightgoldenrodyellow;
+                border: solid 1px gray;
+                border-radius: 8px;
+
+                cursor: pointer;
+            }
+            button:hover {
+                color: white;
+                background-color: navy;
+                transition: all 1s;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="carousel">
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+            </div>
+        </div>
+        <div class="btn-group">
+            <button class="top-view">위에서 보기</button>
+            <button class="normal-view">정면으로 보기</button>
+            <button class="bottom-view">아래에서 보기</button>
+        </div>
+
+        <script>
+            document.addEventListener("click", function (e) {
+                const button = e.target;
+
+                if (button.classList.contains("top-view")) {
+                    const container = document.querySelector(".container");
+                    container.style.transform = "rotateX(45deg)";
+                } else if (button.classList.contains("normal-view")) {
+                    const container = document.querySelector(".container");
+                    container.style.transform = "rotateX(0)";
+                } else if (button.classList.contains("bottom-view")) {
+                    const container = document.querySelector(".container");
+                    container.style.transform = "rotateX(-45deg)";
+                }
+            });
+        </script>
+    </body>
+</html>
