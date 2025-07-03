@@ -42,12 +42,27 @@
                 cursorImg.style.backgroundImage = "url('./img/cry.gif')";
             }
         });
-
         btns.addEventListener('mouseout', (e) => {
             if (e.target.tagName === 'BUTTON') {
                 cursorImg.style.backgroundImage = "url('./img/hello.gif')";
             }
         });
+        //mouseover, mouseout은 이벤트버블링을 통해 가능하지만,
+        //mouseenter, mouseleave는 이벤트버블링되지 않는다.
+        buyBtn.addEventListener('mouseenter', () => {
+            cursorImg.style.backgroundImage = "url('./img/happy.gif')";
+        });
+        buyBtn.addEventListener('mouseleave', () => {
+            cursorImg.style.backgroundImage = "url('./img/hello.gif')";
+        });
+    
+        cancleBtn.addEventListener('mouseenter', () => {
+            cursorImg.style.backgroundImage = "url('./img/cry.gif')";
+        });
+        cancleBtn.addEventListener('mouseleave', () => {
+            cursorImg.style.backgroundImage = "url('./img/hello.gif')";
+        });
+        
 
         
     </script>
