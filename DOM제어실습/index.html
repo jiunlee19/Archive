@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>active website</title>
+</head>
+<body>
+    <div id="btns">
+        <button id="buy">구매하기</button>
+        <button id="cancle">취소/환불</button>
+    </div>
+    
+    <div id="cursor-img"></div>
+
+    <script>
+        const cursorImg = document.querySelector('#cursor-img');
+        cursorImg.style.backgroundImage = "url('./img/hello.gif')";
+        cursorImg.style.backgroundRepeat = "no repeat";
+        cursorImg.style.backgroundSize = "cover";
+        cursorImg.style.position="fixed";
+        cursorImg.style.width="200px";
+        cursorImg.style.height="200px";
+
+        const btns = document.getElementById('btns');
+        const buyBtn = document.getElementById('buy');
+        const cancleBtn = document.getElementById('cancle');
+        
+        window.addEventListener('mousemove',(e)=>{
+            let mouseX = e.clientX + 10;
+            let mouseY = e.clientY + 10;
+            
+            cursorImg.style.left = mouseX + 'px';
+            cursorImg.style.top = mouseY + 'px'; 
+        })
+        
+
+        btns.addEventListener('mouseover', (e) => {
+            if (e.target.id === 'buy') {
+                cursorImg.style.backgroundImage = "url('./img/happy.gif')";
+            } else if (e.target.id === 'cancle') {
+                cursorImg.style.backgroundImage = "url('./img/cry.gif')";
+            }
+        });
+
+        btns.addEventListener('mouseout', (e) => {
+            if (e.target.tagName === 'BUTTON') {
+                cursorImg.style.backgroundImage = "url('./img/hello.gif')";
+            }
+        });
+
+        
+    </script>
+</body>
+</html>
